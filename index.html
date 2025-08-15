@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Janmashtami 💛</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(to bottom right, #fff8dc, #ffe4b5);
+      text-align: center;
+      color: #8b4513;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 500px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .krishna-img {
+      width: 200px;
+      animation: float 4s ease-in-out infinite;
+      margin-top: 20px;
+    }
+
+    .start-btn {
+      background-color: #f4a460;
+      color: white;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 30px;
+      box-shadow: 0 4px 10px rgba(139, 69, 19, 0.3);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .start-btn:hover {
+      transform: scale(1.07);
+      background-color: #d2691e;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 Happy Janmashtami, My Love 🌸</h1>
+  <p>
+    On this beautiful day of Krishna's birth, I pray for your happiness, health, 
+    and endless smiles. Just like Radha & Krishna’s eternal bond, you are my forever. 💛
+  </p>
+
+  <img class="krishna-img" src="https://media.tenor.com/vmvaMX3F-3IAAAAm/hehehehe.webp" alt="Krishna Animation"/>
+
+  <button class="start-btn" onclick="goNext()">Start Celebration 🎉</button>
+
+  <script>
+    function goNext(){
+      window.location.href = "blessings.html";
+    }
+  </script>
+</body>
+</html>
