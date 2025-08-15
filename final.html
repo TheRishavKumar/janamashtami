@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💕 Janmashtami Specials 💕</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ffe6f0, #ffb6c1);
+      font-family: 'Comic Sans MS', cursive;
+      color: #b03060;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .menu-btn {
+      background-color: #ff69b4;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin: 10px;
+      box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
+      transition: transform 0.3s ease, background 0.3s ease;
+      animation: fadeIn 2s ease-in-out;
+      display: block;
+      width: 250px;
+    }
+
+    .menu-btn:hover {
+      transform: scale(1.07);
+      background-color: #ff1493;
+    }
+
+    /* Floating emoji flowers */
+    .flower {
+      position: absolute;
+      font-size: 28px;
+      animation: floatDown linear infinite;
+      pointer-events: none;
+      opacity: 0.9;
+    }
+
+    @keyframes floatDown {
+      0% { transform: translateY(-60px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💖 Janmashtami Special Menu 💖</h1>
+
+  <button class="menu-btn" onclick="openPage('matka.html')">🎯 Matka Game</button>
+  <button class="menu-btn" onclick="openPage('note.html')">💌 Sweet Note for My Love</button>
+  <button class="menu-btn" onclick="openPage('care.html')">🦚 Care Tips</button>
+
+  <script>
+    function createFlower(){
+      const flower = document.createElement('div');
+      const emojis = ["🌸", "❤️", "🌷", "🌹", "💖"];
+      flower.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      flower.classList.add("flower");
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(flower);
+      setTimeout(() => {
+        flower.remove();
+      }, 8000);
+    }
+
+    setInterval(createFlower, 500);
+
+    function openPage(page){
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>
