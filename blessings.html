@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Krishna's Blessings 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ffe6f0, #ffb6c1);
+      overflow: hidden;
+      font-family: 'Comic Sans MS', cursive;
+      color: #b03060;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      animation: fadeIn 2s ease-in-out;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.3rem;
+      animation: fadeIn 3s ease-in-out;
+      max-width: 80%;
+      margin: 0 auto 25px;
+    }
+
+    /* Floating Flowers */
+    .flower {
+      position: absolute;
+      width: 50px;
+      animation: floatDown linear infinite;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    @keyframes floatDown {
+      0% { transform: translateY(-60px) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+
+    /* Button */
+    .next-btn {
+      background-color: #ff69b4;
+      color: white;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
+      transition: transform 0.3s ease, background 0.3s ease;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    .next-btn:hover {
+      transform: scale(1.07);
+      background-color: #ff1493;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌸 Blessings for my Love 🌸</h1>
+  <p>On this Janmashtami, may your life be filled with endless love, sweet smiles, and Krishna’s divine grace 💖</p>
+  <button class="next-btn" onclick="goNext()">Continue ➡</button>
+
+  <script>
+    function createFlower(){
+      const flower = document.createElement('img');
+      const pinkFlowers = [
+        ""https://media.tenor.com/TD9IhfQvDNEAAAAm/puso-heart.webp",
+        "https://media.tenor.com/bhJUtXPAi5QAAAAm/daisies-flower.webp"
+      ];
+      flower.src = pinkFlowers[Math.floor(Math.random() * pinkFlowers.length)];
+      flower.classList.add("flower");
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 8000);
+    }
+
+    setInterval(createFlower, 500);
+
+    function goNext(){
+      window.location.href = "radha_krishna.html";
+    }
+  </script>
+</body>
+</html>
